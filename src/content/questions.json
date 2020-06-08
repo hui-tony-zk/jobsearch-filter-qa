@@ -1,12 +1,38 @@
 [
     { 
-        "question": "question1", 
-        "help": "question1help",
+        "question": "What job title are you looking for?", 
+        "help": "Things like \"software developer\" or \"marketing associate.\" If you want to see everything, leave this blank!",
+        "placeholder": "Business Analyst",
+        "type": "text",
         "id": "what"
     },
     { 
-        "question": "question2", 
-        "help": "question2help",
+        "question": "Full-time or part-time?", 
+        "help": "This helps us find the right job type for you. If you have no preference, leave this blank!",
+        "placeholder": "Full-time",
+        "type": "select",
+        "options": ["Full-time", "Part-time"],
+        "id": "jobtype"
+    },
+    { 
+        "question": "What's your minimum annual salary?", 
+        "help": "This helps narrow down jobs that pay at least that much, so you're not wasting time with low paying jobs. If you have no minimum, leave this blank!",
+        "placeholder": "30000",
+        "type": "number",
+        "id": "salary"
+    },
+    { 
+        "question": "Where do you live?", 
+        "help": "Enter a specific address, or an approximate location. This helps us find jobs closest to you!",
+        "placeholder": "Seattle, Washington",
+        "type": "text",
         "id": "where"
+    },
+    { 
+        "question": "How far do you want to commute?", 
+        "help": "Enter a distance, in miles. 25 means 25 miles (approximately 30 minutes!). We'll prioritize jobs that are within that distance. If you have no preference, leave this blank!",
+        "placeholder": "10",
+        "type": "number",
+        "id": "distance"
     }
 ]

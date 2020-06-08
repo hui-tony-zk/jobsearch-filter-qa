@@ -1,19 +1,15 @@
 import React from "react"
 
 import 'bootstrap/dist/css/bootstrap.css';
-import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form'
 
 import NextButton from '../components/next-button'
-import Question from "../components/question-text";
 import SkipButton from "../components/skip-button";
+import Question from "../components/question-text";
+import AnswerField from "../components/answer";
 
 import questionsData from "../content/questions.json"
-
-function getQuestion(questionNum) {
-  return questionsData[questionNum]
-}
 
 class QuestionForm extends React.Component {
   constructor(props, context) {
@@ -43,12 +39,14 @@ class QuestionForm extends React.Component {
 
   render () {
     return (
-    <Container fluid className = "text-center">
+      <>
       <Question q={this.state.question.question} help={this.state.question.help}/>
       <Form>
-        <Form.Row style={{marginBottom:10}}>
-          <Form.Control type="text" placeholder="Enter your answer..."/>
-        </Form.Row>
+        <AnswerField 
+          type={this.state.question.type} 
+          options={this.state.question.options}
+          placeholder={this.state.question.placeholder}
+        />
         <Form.Row>
           <Col md={6} sm={12}>
             <NextButton clickHandler={this.saveNext}/>
@@ -58,9 +56,20 @@ class QuestionForm extends React.Component {
           </Col>
         </Form.Row>
       </Form>
-    </Container>
+      </>
     )
   }
 }
 
 export default QuestionForm
+
+
+function getQuestion(questionNum) {
+  if (questionNum <= nQuestions) {
+    return questionsData[questionNum]
+  } else {
+    return {}
+  }
+}
+
+const nQuestions = questionsData.length
