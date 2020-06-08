@@ -7,5 +7,5 @@
 module.exports = {
   /* Your site config here */
   plugins: [],
-  pathPrefix: "/jobserach-filter-qa",
+  pathPrefix: "/jobserach-filter-qa"
 }
